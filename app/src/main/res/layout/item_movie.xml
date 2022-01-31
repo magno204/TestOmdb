@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_card_height"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="@dimen/common_padding_min"
+    android:layout_marginHorizontal="@dimen/common_padding_min">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgPhoto"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="H, 3:2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Mi titulo"
+            android:layout_marginHorizontal="@dimen/common_padding_min"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgPhoto"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tvYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_padding_middle"
+            tools:text="Año"
+            android:layout_marginHorizontal="@dimen/common_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintStart_toEndOf="@+id/imgPhoto"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!--<TextView
+            android:id="@+id/tvCountry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Pais"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:layout_marginHorizontal="@dimen/common_padding_min"
+            app:layout_constraintTop_toBottomOf="@id/tvYear"
+            app:layout_constraintStart_toEndOf="@+id/imgPhoto"
+            app:layout_constraintEnd_toEndOf="parent"/>-->
+
+        <TextView
+            android:id="@+id/tvGenre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Género"
+            android:layout_marginHorizontal="@dimen/common_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintTop_toBottomOf="@id/tvYear"
+            app:layout_constraintStart_toEndOf="@+id/imgPhoto"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvRuntime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Duración"
+            android:layout_marginHorizontal="@dimen/common_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintTop_toBottomOf="@id/tvGenre"
+            app:layout_constraintStart_toEndOf="@+id/imgPhoto"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvDirector"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Director"
+            android:layout_marginHorizontal="@dimen/common_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintTop_toBottomOf="@id/tvRuntime"
+            app:layout_constraintStart_toEndOf="@+id/imgPhoto"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

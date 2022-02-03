@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/item_card_height"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginBottom="@dimen/common_padding_min"
-    android:layout_marginHorizontal="@dimen/common_padding_min">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".movieEditModule.MovieDetailFragment"
+    android:background="@android:color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/imgPhoto"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintDimensionRatio="H, 3:2"
+            app:layout_constraintDimensionRatio="H, 1:1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            tools:text="Mi titulo"
-            android:layout_marginHorizontal="@dimen/common_padding_min"
+            tools:text="Titulo Pelicula"
+            android:textAlignment="center"
             android:textAppearance="?attr/textAppearanceHeadline6"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgPhoto"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgPhoto"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
             android:id="@+id/tvYear"
@@ -42,7 +41,7 @@
             android:layout_marginHorizontal="@dimen/common_padding_min"
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintTop_toBottomOf="@id/tvTitle"
-            app:layout_constraintStart_toEndOf="@+id/imgPhoto"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
@@ -53,7 +52,7 @@
             android:layout_marginHorizontal="@dimen/common_padding_min"
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintTop_toBottomOf="@id/tvYear"
-            app:layout_constraintStart_toEndOf="@+id/imgPhoto"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
@@ -64,7 +63,7 @@
             android:layout_marginHorizontal="@dimen/common_padding_min"
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintTop_toBottomOf="@id/tvGenre"
-            app:layout_constraintStart_toEndOf="@+id/imgPhoto"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
@@ -75,10 +74,31 @@
             android:layout_marginHorizontal="@dimen/common_padding_min"
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintTop_toBottomOf="@id/tvRuntime"
-            app:layout_constraintStart_toEndOf="@+id/imgPhoto"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
+        <TextView
+            android:id="@+id/tvReleaseDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Fecha de estreno"
+            android:layout_marginHorizontal="@dimen/common_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintTop_toBottomOf="@id/tvDirector"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvPoster"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Poster"
+            android:layout_marginHorizontal="@dimen/common_padding_min"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            app:layout_constraintTop_toBottomOf="@id/tvReleaseDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</com.google.android.material.card.MaterialCardView>
+</androidx.core.widget.NestedScrollView>

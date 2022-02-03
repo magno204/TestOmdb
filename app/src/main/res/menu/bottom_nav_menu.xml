@@ -12,9 +12,9 @@
         android:icon="@drawable/ic_movie"
         app:showAsAction="never"/>
 
-    <item android:id="@+id/action_profile"
+    <!--<item android:id="@+id/action_profile"
         android:title="@string/home_web"
         android:icon="@drawable/ic_web"
-        app:showAsAction="never"/>
+        app:showAsAction="never"/>-->
 
 </menu>

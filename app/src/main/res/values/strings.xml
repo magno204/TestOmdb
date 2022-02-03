@@ -5,4 +5,9 @@
     <string name="home_title">Inicio</string>
     <string name="home_list">Peliculas</string>
     <string name="home_web">Navegar</string>
+    <string name="main_error_no_resolve">No es posible acceder al recurso</string>
+    <string name="main_error_no_website">No es posible acceder a esta web</string>
+    <string name="email_subject">Información para contratar servicios</string>
+    <string name="title_movie_detail">Detalles de la película</string>
+    <string name="main_auth_welcome">Bienvenido</string>
 </resources>

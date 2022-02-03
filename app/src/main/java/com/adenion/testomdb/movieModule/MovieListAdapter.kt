@@ -4,6 +4,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -12,10 +14,13 @@ import com.adenion.testomdb.common.entities.MovieEntity
 import com.adenion.testomdb.databinding.ItemMovieBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import java.util.*
+import kotlin.collections.ArrayList
 
-class MovieListAdapter(private var listener: OnClickListener): ListAdapter<MovieEntity, RecyclerView.ViewHolder>(MovieDiffCallback()) {
+class MovieListAdapter(private var listener: OnClickListener): ListAdapter<MovieEntity, RecyclerView.ViewHolder>(MovieDiffCallback()), Filterable {
 
     private lateinit var mContext: Context
+    var movieList : MutableList<MovieEntity> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         mContext = parent.context
@@ -41,6 +46,38 @@ class MovieListAdapter(private var listener: OnClickListener): ListAdapter<Movie
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
                 .into(binding.imgPhoto)
+        }
+    }
+
+    override fun getFilter(): Filter {
+        return object : Filter(){
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val charSearch = constraint.toString()
+                if (charSearch.isEmpty()) {
+                    submitList(movieList)
+                    //currentList =
+                    //countryFilterList = countryList
+                } else {
+                    val resultList : MutableList<MovieEntity> = mutableListOf()
+                    for (row in currentList) {
+                        if (row.title.lowercase(Locale.ROOT).contains(charSearch.lowercase(Locale.ROOT))) {
+                            resultList.add(row)
+                        }
+                    }
+                    submitList(resultList)
+                    //countryFilterList = resultList
+                }
+                val filterResults = FilterResults()
+                filterResults.values = currentList
+                return filterResults
+            }
+
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                var filterResult = results?.values as MutableList<MovieEntity>
+                //countryFilterList = results?.values as ArrayList<String>
+                notifyDataSetChanged()
+            }
+
         }
     }
 
@@ -75,4 +112,6 @@ class MovieListAdapter(private var listener: OnClickListener): ListAdapter<Movie
             return oldItem == newItem
         }
     }
+
+
 }
